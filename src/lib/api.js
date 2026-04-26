@@ -1,7 +1,8 @@
+import 'dotenv/config';
 import axios from 'axios';
 import { loadCredentials, saveCredentials } from './credentials.js';
 
-const BACKEND_URL = 'https://mesh-data-persistence.vercel.app';
+const BACKEND_URL = process.env.BACKEND_URL || 'https://mesh-data-persistence.vercel.app';
 
 export function createApiClient() {
   const creds = loadCredentials();
