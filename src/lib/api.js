@@ -1,5 +1,9 @@
-import 'dotenv/config';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import dotenv from 'dotenv';
 import axios from 'axios';
+
+dotenv.config({ path: join(dirname(fileURLToPath(import.meta.url)), '../../.env') });
 import { loadCredentials, saveCredentials } from './credentials.js';
 
 const BACKEND_URL = process.env.BACKEND_URL;
