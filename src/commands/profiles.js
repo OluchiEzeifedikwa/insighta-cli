@@ -14,10 +14,10 @@ function requireAuth() {
 function displayProfiles(profiles) {
   if (!profiles.length) { console.log('No profiles found.'); return; }
   const table = new Table({
-    head: ['Name', 'Gender', 'Age', 'Age Group', 'Country'],
-    colWidths: [22, 10, 6, 12, 18],
+    head: ['ID', 'Name', 'Gender', 'Age', 'Age Group', 'Country'],
+    colWidths: [38, 22, 10, 6, 12, 18],
   });
-  profiles.forEach(p => table.push([p.name, p.gender, p.age, p.age_group, p.country_name]));
+  profiles.forEach(p => table.push([p.id, p.name, p.gender, p.age, p.age_group, p.country_name]));
   console.log(table.toString());
 }
 
