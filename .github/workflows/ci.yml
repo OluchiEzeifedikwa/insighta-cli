@@ -22,3 +22,6 @@ jobs:
 
       - name: Check for syntax errors
         run: node --check bin/insighta.js src/**/*.js
+
+      - name: Lint
+        run: npm run lint
