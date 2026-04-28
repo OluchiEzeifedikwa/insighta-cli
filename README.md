@@ -15,10 +15,23 @@ All interfaces share the same backend as a single source of truth.
 ## Installation
 
 ```bash
+git clone https://github.com/OluchiEzeifedikwa/insighta-cli
+cd insighta-cli
+cp .env.example .env  # set BACKEND_URL
 npm install -g .
 ```
 
-After installation, the `insighta` command is available globally.
+After installation, the `insighta` command is available globally from any directory.
+
+## Environment Variables
+
+Create a `.env` file in the `insighta-cli` directory:
+
+```env
+BACKEND_URL=https://mesh-data-persistence.vercel.app
+```
+
+The CLI loads this file relative to its own location, so it works correctly when installed globally.
 
 ## Authentication Flow
 
