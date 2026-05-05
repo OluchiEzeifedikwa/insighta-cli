@@ -7,6 +7,7 @@ import {
   searchProfilesCommand,
   createProfileCommand,
   exportProfilesCommand,
+  ingestProfilesCommand,
 } from '../src/commands/profiles.js';
 
 program
@@ -60,5 +61,10 @@ profiles
   .option('--country <country_id>', 'Filter by country code')
   .option('--age-group <age_group>', 'Filter by age group')
   .action(exportProfilesCommand);
+
+profiles
+  .command('ingest <file>')
+  .description('Bulk ingest profiles from a CSV file (admin only)')
+  .action(ingestProfilesCommand);
 
 program.parse();

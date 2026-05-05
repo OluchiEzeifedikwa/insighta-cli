@@ -65,7 +65,7 @@ The backend enforces two roles:
 
 | Role | Permissions |
 |---|---|
-| `admin` | Create profiles, delete profiles, list, search, export |
+| `admin` | Create profiles, delete profiles, ingest CSV, list, search, export |
 | `analyst` | List, search, export profiles (read-only) |
 
 The CLI does not enforce roles itself — it relies entirely on the backend returning `403 Forbidden` for unauthorized actions. Errors are displayed clearly in the terminal.
@@ -115,6 +115,9 @@ insighta profiles search "young males from nigeria"
 
 # Create a profile (admin only)
 insighta profiles create --name "Harriet Tubman"
+
+# Bulk ingest profiles from a CSV file (admin only)
+insighta profiles ingest profiles.csv
 
 # Export profiles to CSV
 insighta profiles export --format csv
